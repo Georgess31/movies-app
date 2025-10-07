@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Video Store</title>
+<style>
+  body { 
+    font-family: system-ui, Arial, sans-serif; 
+    max-width: 900px; 
+    margin: 2rem auto; 
+    padding: 0 1rem; 
+    background: #fdf6e3;  /* soft beige background */
+    color: #333;
+  }
+
+  header { 
+    display:flex; 
+    justify-content: space-between; 
+    align-items:center; 
+    margin-bottom: 1rem; 
+    background: #268bd2;  /* blue header */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+
+  header a { color: white; text-decoration: none; font-weight: bold; }
+
+  table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 1rem; 
+  }
+  th, td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+  }
+  th { 
+    background: #2aa198;   /* teal header row */
+    color: white;
+    text-align: left; 
+  }
+  tr:nth-child(even) { background: #eee; }  /* zebra stripes */
+
+  a.button, button { 
+    display:inline-block; 
+    padding: .5rem .8rem; 
+    border: none; 
+    border-radius: 6px;
+    text-decoration:none; 
+    background: #990038;   /* green buttons */
+    color: white;
+    cursor: pointer;
+  }
+
+  a.button:hover, button:hover { 
+    background: #657b83;   /* darker hover */
+  }
+
+  .actions a { 
+    margin-right: .5rem; 
+    padding: .3rem .5rem;
+    background: #cb4b16;   /* orange for actions */
+    border-radius: 4px;
+    color: white;
+  }
+</style>
+
+</head>
+<body>
+<header>
+  <h1><a href="{% url 'video_list' %}" style="text-decoration:none;color:inherit;">Video Store</a></h1>
+  <nav><a class="button" href="{% url 'video_create' %}">+ Add Video</a></nav>
+</header>
+<hr/>
+{% block content %}{% endblock %}
+</body>
+</html>
